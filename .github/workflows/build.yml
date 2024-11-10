@@ -99,7 +99,6 @@ jobs:
         run: ./gradlew createMojmapPaperclipJar --stacktrace
 
       - name: Upload Paperclip Jar
-        if: fromJSON(steps.determine.outputs.result).action == 'paperclip'
         uses: actions/upload-artifact@v4
         with:
           name: paper-${{ fromJSON(steps.determine.outputs.result).pr }}
